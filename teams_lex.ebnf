@@ -1,0 +1,80 @@
+TQASM TRACE("TQASM");
+MEASZ TRACE("MEASZ");
+QREG TRACE("QREG");
+GATE TRACE("GATE");
+IMG TRACE("IMG");
+delay TRACE("delay");
+barrier TRACE("barrier");
+play TRACE("play");
+cal TRACE("cal");
+defcal TRACE("defcal"); 
+DEFCAL TRACE("DECAL");
+frame TRACE("frame");
+newframe TRACE("newframe");
+ns TRACE("ns");
+waveform TRACE("waveform");
+
+I TRACE("I");
+X TRACE("X");
+Y TRACE("Y");
+Z TRACE("Z");
+H TRACE("H");
+S TRACE("S");
+T TRACE("T");
+TD TRACE("TD");
+SD TRACE("SD");
+WROOT TRACE("WROOT");
+CX TRACE("CX");
+CZ TRACE("CZ");
+SWAP TRACE("SWAP");
+CY TRACE("CY");
+OX TRACE("OX");
+OY TRACE("OY");
+OZ TRACE("OZ");
+TOFFOLI TRACE("TOFFOLI");
+FREDKIN TRACE("FREDKIN");
+RX TRACE("RX");
+RY TRACE("RY");
+RZ TRACE("RZ");
+PHASE TRACE("PHASE");
+RXX TRACE("RXX");
+RYY TRACE("RYY");
+RZZ TRACE("RZZ");
+CRX TRACE("CRX");
+CRY TRACE("CRY");
+CRZ TRACE("CRZ");
+ORX TRACE("ORX");
+ORY TRACE("ORY");
+ORZ TRACE("ORZ");
+ISWAP TRACE("ISWAP"); 
+UNITARY TRACE("UNITARY"); 
+PI TRACE("PI");  
+
+^"#pragma" TRACE("PRAGMA"); 
+"qubits.mapping" TRACE("QUBITS_MAPPING");
+"qubits.coupling"  TRACE("QUBITS_COUPLING"); 
+
+[a-z][A-Za-z0-9_.]*  TRACE("ID"); 
+
+
+
+
+([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)? TRACE("REAL"); 
+
+[1-9]+[0-9]*|0 TRACE("NNINTEGER");
+
+
+
+\+ TRACE("+"); 
+\- TRACE("-"); 
+\* TRACE("*"); 
+\/ TRACE("/"); 
+\= TRACE("="); 
+\, TRACE(","); 
+\( TRACE("("); 
+\) TRACE(")"); 
+\[ TRACE("["); 
+\] TRACE("]"); 
+\{ TRACE("{"); 
+\} TRACE("}");
+\; TRACE(";"); 
