@@ -9,7 +9,7 @@ DEFCAL: 'defcal';
 FRAME: 'frame';
 NEWFRAME: 'newframe';
 PLAY: 'play';
-PRAGMA: '#pragma';
+PRAGMA: {getCharPositionInLine() == 0}? '#' 'pragma' [ \t]*;
 
 // Gate operations
 I: 'I';
@@ -64,9 +64,9 @@ NNINTEGER: [1-9][0-9]* | '0';
     
 
 
-// Strings
-STRING: '"' .*? '"';
-
+// MAPPING/COUPLING Identifiers
+MAPPINGID : 'qubits.mapping';
+COUPLINGID : 'qubits.coupling';
 
 
 // Operators
@@ -93,4 +93,6 @@ EQ: '=';
 WS: [ \t\r\n]+ -> skip;
 COMMENT: '//' ~[\r\n]* -> skip;
 BLOCK_COMMENT: '/*' .*? '*/' -> skip;
+		
+		
 		
