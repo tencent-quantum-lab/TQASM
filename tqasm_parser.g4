@@ -20,10 +20,12 @@ macro_chiptop
     | pragma_qubit_mapping pragma_qubit_coupling
     ;
 
+// introduced from version 0.2.1
 pragma_qubit_mapping
     : PRAGMA MAPPINGID chip_topo
     ;
 
+// introduced from version 0.2.1
 pragma_qubit_coupling
     : PRAGMA COUPLINGID chip_topo
     ;
@@ -38,7 +40,7 @@ statement
     | gatedecl RBRACE
     | MEASZ argument SEMI
     | gop
-    | pulse
+    | pulse 
     ;
 
 qdecl
@@ -134,6 +136,7 @@ stdgate
     | UNITARY LPAREN explist RPAREN argument SEMI
     ;
 
+// introduced from version 0.2
 pulse
     : defcal
     ;
@@ -178,86 +181,4 @@ nnint_pair
 real : REAL;
 nninteger : NNINTEGER;
 id : ID;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
