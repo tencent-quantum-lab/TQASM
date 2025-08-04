@@ -1,1 +1,89 @@
-
+⟨mainprogram⟩	|=	<version_specifier> ⟨program⟩
+<version_specifier>	|=	TQASM ⟨real⟩ ; 
+⟨program⟩	|=	⟨statement⟩
+		| ⟨program⟩ ⟨statement⟩
+<statement>	|=	⟨qdecl⟩
+		|<gatedecl> <goplist>}
+		|<gatedecl>}
+		|MEASZ <argument>
+		|<gop>
+		|<pulse>
+<qdecl>	|=	QREG ⟨id⟩ [ ⟨nninteger⟩ ] ;
+⟨gatedecl⟩	|=	GATE ⟨id⟩ ⟨idlist⟩ {
+		| GATE ⟨id⟩ ( ) ⟨idlist⟩ {
+		| GATE ⟨id⟩ ( ⟨idlist⟩ )⟨idlist⟩ {
+<goplist>	|=	<gop>
+		|<goplist> <gop>
+<gop>	|=	<stdgate>
+		| ⟨id⟩ ⟨anylist⟩ ;
+		| ⟨id⟩ ( ) ⟨anylist⟩ ;
+		| <matrix> IMG <matrix> <anylist>;
+		| ⟨id⟩ ( ⟨explist⟩ ) ⟨anylist⟩ ;
+⟨argument⟩	|=	⟨id⟩
+		| ⟨id⟩ [ ⟨nninteger⟩ ]
+⟨explist⟩	|=	⟨exp⟩
+		| ⟨explist⟩ , ⟨exp⟩
+⟨anylist⟩	|=	⟨idlist⟩
+		| ⟨mixedlist⟩
+⟨mixedlist⟩	|=	⟨id⟩ [ ⟨nninteger⟩ ]
+		| ⟨mixedlist⟩ , ⟨id⟩
+		| ⟨mixedlist⟩ , ⟨id⟩ [ ⟨nninteger⟩ ]
+		| ⟨idlist⟩ , ⟨id⟩[ ⟨nninteger⟩ ]
+⟨idlist⟩	|=	⟨id⟩
+		| ⟨idlist⟩ , ⟨id⟩
+⟨exp⟩	|=	⟨real⟩
+		| ⟨nninteger⟩
+		| PI
+		| ⟨exp⟩ + ⟨exp⟩
+		| ⟨exp⟩ - ⟨exp⟩
+		| ⟨exp⟩ * ⟨exp⟩
+		| ⟨exp⟩ / ⟨exp⟩
+		| ⟨exp⟩ ^ ⟨exp⟩
+		| ( ⟨exp⟩ )
+		| - ⟨exp⟩
+stdgate	|=	I ⟨argument⟩;
+		|X ⟨argument⟩;
+		|Y ⟨argument⟩;
+		|Z ⟨argument⟩;
+		|H ⟨argument⟩ ;
+		|S ⟨argument⟩ ;
+		|T ⟨argument⟩;
+		|TD ⟨argument⟩ ;
+		|SD ⟨argument⟩;
+		|WROOT ⟨argument⟩ ;
+		|CX ⟨argument⟩ ⟨argument⟩;
+		|SZ ⟨argument⟩ ⟨argument⟩  ;
+		|SWAP ⟨argument⟩ ⟨argument⟩ ;
+		|CY ⟨argument⟩ ⟨argument⟩;
+		|OX ⟨argument⟩ ⟨argument⟩;
+		|OY ⟨argument⟩ ⟨argument⟩ ;
+		|OZ ⟨argument⟩ ⟨argument⟩;
+		|TOFFOLI ⟨argument⟩ ⟨argument⟩ ⟨argument⟩;
+		|FREDKIN ⟨argument⟩ ⟨argument⟩ ⟨argument⟩ ;
+		|RX ( ⟨explist⟩ ) ⟨argument⟩;
+		|RY ( ⟨explist⟩ ) ⟨argument⟩;
+		|RZ ( ⟨explist⟩ ) ⟨argument⟩;
+		|PHASE ( ⟨explist⟩ ) ⟨argument⟩;
+		|RXX ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩;
+		|RYY ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩;
+		|RZZ ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩;
+		|CRX ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|CRY ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|CRZ ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|ORX ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|ORY ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|ORZ ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|ISWAP ( ⟨explist⟩ ) ⟨argument⟩ ⟨argument⟩ ;
+		|UNITARY ( ⟨explist⟩ )  ⟨argument⟩ ;
+<id>     	|=	 [A-Za-z][A-Za-z0-9_]*
+<real>	|=	([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?
+<nninteger>	|=	 [1-9]+[0-9]*|0
+<pulse>	|=	<defcal>
+<defcal>	|=	"defcal"<id> <idlist>  { <calgrammar>}
+<calgrammar>	|=	<calstatement>
+		| <calgrammar> <calstatement>
+<calstatement>	|=	<framedecl>
+		| <waveformplay>
+<framedecl>	|=	| "frame" <id> "=" "newframe"(<idlist>);
+<waveformplay>	|=	"play" (<id>, <waveform>);
+<waveform>	|=	<id> (explist)
