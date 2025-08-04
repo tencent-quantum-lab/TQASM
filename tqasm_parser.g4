@@ -21,11 +21,11 @@ macro_chiptop
     ;
 
 pragma_qubit_mapping
-    : PRAGMA STRING chip_topo
+    : PRAGMA MAPPINGID chip_topo
     ;
 
 pragma_qubit_coupling
-    : PRAGMA STRING chip_topo
+    : PRAGMA COUPLINGID chip_topo
     ;
 
 program
@@ -178,6 +178,78 @@ nnint_pair
 real : REAL;
 nninteger : NNINTEGER;
 id : ID;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
