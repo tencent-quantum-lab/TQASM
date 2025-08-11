@@ -23,7 +23,7 @@ TD: 'TD';
 SD: 'SD';
 WROOT: 'WROOT';
 CX: 'CX';
-SZ: 'SZ';
+CZ: 'CZ';
 SWAP: 'SWAP';
 CY: 'CY';
 OX: 'OX';
