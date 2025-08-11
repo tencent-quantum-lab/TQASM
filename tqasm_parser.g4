@@ -111,7 +111,7 @@ stdgate
     | SD argument SEMI
     | WROOT argument SEMI
     | CX argument argument SEMI
-    | SZ argument argument SEMI
+    | CZ argument argument SEMI
     | SWAP argument argument SEMI
     | CY argument argument SEMI
     | OX argument argument SEMI
@@ -122,7 +122,7 @@ stdgate
     | RX LPAREN explist RPAREN argument SEMI
     | RY LPAREN explist RPAREN argument SEMI
     | RZ LPAREN explist RPAREN argument SEMI
-    | PHASE LPAREN explist RPAREN argument SEMI
+    // | PHASE LPAREN explist RPAREN argument SEMI
     | RXX LPAREN explist RPAREN argument argument SEMI
     | RYY LPAREN explist RPAREN argument argument SEMI
     | RZZ LPAREN explist RPAREN argument argument SEMI
@@ -132,8 +132,8 @@ stdgate
     | ORX LPAREN explist RPAREN argument argument SEMI
     | ORY LPAREN explist RPAREN argument argument SEMI
     | ORZ LPAREN explist RPAREN argument argument SEMI
-    | ISWAP LPAREN explist RPAREN argument argument SEMI
-    | UNITARY LPAREN explist RPAREN argument SEMI
+    // | ISWAP LPAREN explist RPAREN argument argument SEMI
+    // | UNITARY LPAREN explist RPAREN argument SEMI
     ;
 
 // introduced from version 0.2
